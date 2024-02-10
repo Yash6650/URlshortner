@@ -2,8 +2,9 @@ const express = require('express')
 const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
-
-mongoose.connect('mongodb+srv://yashsoni9024:Passcode902@cluster0.kgi8zjb.mongodb.net/short', {
+const dotenv = require('dotenv')
+dotenv.config({path:'./.env'})
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => {
   console.log('MongoDB connected');
@@ -34,5 +35,4 @@ app.get('/:shortUrl', async (req, res) => {
 
   res.redirect(shortUrl.full)
 })
-
-app.listen(process.env.NEWPORT || 5010);
+app.listen(process.env.PORT || 5010);
