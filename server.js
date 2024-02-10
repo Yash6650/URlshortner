@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const app = express()
 
-mongoose.connect('mongodb://localhost:27017', {
+mongoose.connect('mongodb+srv://yashsoni9024:Passcode902@cluster0.kgi8zjb.mongodb.net/short', {
   useNewUrlParser: true, useUnifiedTopology: true
 }).then(() => {
   console.log('MongoDB connected');

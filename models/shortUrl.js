@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const shortID = require('shortid');
 
-try {
+
     const shortUrlSchema = new mongoose.Schema({
         full: {
             type: String,
@@ -18,6 +18,5 @@ try {
             default: 0
         }
     });
-} catch (error) {
-    console.error("Error occurred while creating the schema:", error);
-}
+
+module.exports = mongoose.model('ShortUrl', shortUrlSchema)
