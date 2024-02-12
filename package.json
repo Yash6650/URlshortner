@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "prodStart": "pm2 start server.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongoose": "^8.1.1",
+    "pm2": "^5.3.1",
     "shortid": "^2.2.16"
   },
   "devDependencies": {
